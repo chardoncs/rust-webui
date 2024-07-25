@@ -1,5 +1,5 @@
 /*
-  WebUI Library 2.2.0
+  WebUI Library 2.4.2
   http://_webui_core.me
   https://github.com/alifcommunity/webui
   Copyright (c) 2020-2023 Hassan Draga.
