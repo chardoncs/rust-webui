@@ -3,7 +3,7 @@
   http://_webui_core.me
   https://github.com/alifcommunity/webui
   Copyright (c) 2020-2023 Hassan Draga.
-  Licensed under GNU General Public License v2.0.
+  Licensed under MIT license.
   All rights reserved.
   Canada.
 */
