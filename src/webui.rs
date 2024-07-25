@@ -21,11 +21,10 @@ use std::collections::HashMap;
 use std::ffi::CStr;
 use std::ffi::CString;
 use std::os::raw::c_char;
-use std::sync::Mutex;
+use std::sync::{Mutex, MutexGuard};
 
 use bindgen::*;
 use once_cell::sync::Lazy;
-use std::sync::MutexGuard;
 
 // Consts
 pub const true_: u32 = 1;
