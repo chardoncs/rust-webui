@@ -21,10 +21,11 @@ use std::collections::HashMap;
 use std::ffi::CStr;
 use std::ffi::CString;
 use std::os::raw::c_char;
+use std::sync::Mutex;
 
 use bindgen::*;
-use lazy_static::lazy_static;
-use std::sync::{Mutex, MutexGuard};
+use once_cell::sync::Lazy;
+use std::sync::MutexGuard;
 
 // Consts
 pub const true_: u32 = 1;
@@ -225,10 +226,8 @@ enum GlobalArray {
 
 static mut GLOBAL_ARRAY: [[GlobalArray; COLS]; ROWS] = [[GlobalArray::None; COLS]; ROWS];
 
-lazy_static! {
-    static ref ELEMENTS_MAP: Mutex<HashMap<String, usize>> = Mutex::new(HashMap::new());
-    // static mut func_array: Vec<Vec<fn(Event)>> = vec![vec![]; 1024];
-}
+static ELEMENTS_MAP: Lazy<Mutex<HashMap<String, usize>>> = Lazy::new(|| Mutex::new(HashMap::new()));
+// static mut func_array: Vec<Vec<fn(Event)>> = vec![vec![]; 1024];
 
 // Save a string in the map and return its index
 fn save_string(mut map: MutexGuard<HashMap<String, usize>>, s: &str) -> usize {
