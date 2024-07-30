@@ -3,5 +3,6 @@ name = "webui-rs"
 version = "0.1.0"
 build = "build.rs"
 edition = "2021"
+rust-version = "1.80"
 
 [dependencies]
