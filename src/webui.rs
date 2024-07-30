@@ -21,8 +21,7 @@ use std::collections::HashMap;
 use std::ffi::CStr;
 use std::ffi::CString;
 use std::os::raw::c_char;
-use std::sync::LazyLock;
-use std::sync::{Mutex, MutexGuard};
+use std::sync::{LazyLock, Mutex, MutexGuard};
 
 use bindgen::*;
 
